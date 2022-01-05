@@ -1,0 +1,195 @@
+/*
+Author - Tim Winwood - x20213638
+Comments and spacing have been used exhaustively to aide review and demonstrate understanding
+In a commercial setting, comments would be limited to more technical aspects of the design
+*/
+
+/* <-- GENERAL --> */
+
+/* '@font-face' rule to import the 'Sifonn Pro' font from the 'fonts' folder */
+@font-face {
+    font-family: 'Sifonn Pro';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/sifonn-pro.ttf') format('truetype');
+}
+
+/* '@font-face' rule to import the 'Univers LT Std 55 Roman' font from the 'fonts' folder */
+@font-face {
+    font-family: 'Univers LT Std 55 Roman';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/UniversLTStd.ttf') format('truetype');
+    }
+
+/* '@font-face' rule to import the 'Univers LT Std 65 Bold' font from the 'fonts' folder */
+@font-face {
+    font-family: 'Univers LT Std 65 Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/UNVR65W.TTF') format('truetype');
+    }
+
+
+/* '.h*' class or 'h*' element selector - style(s) applied to all elements with class '.h*' and to all 'h*' elements */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    font-family: 'Univers LT Std 65 Bold','Helvetica';  
+}
+
+/* '.h1' class or 'h1' element selector - style(s) applied to all elements with class '.h1' and to all 'h1' elements */
+.h1, h1{
+    font-family: 'Sifonn Pro','Univers LT Std 65 Bold','Helvetica'; 
+}
+
+
+/* 'body' element selector - style(s) applied to all elements within 'body' element */
+body{
+    font-family: 'Univers LT Std 55 Roman','Helvetica';
+    overflow-x: hidden;
+}
+
+/* 'a' element selector - style(s) applied to all 'a' elements */
+a{
+    color:#ff6666;
+}
+
+/* '.hc-bg' class selector - style(s) applied to all elements with class '.hc-bg' */
+.hc-bg{
+    background-color:#ff6666;
+}
+
+/* '.hc-color' class selector - style(s) applied to all elements with class '.hc-color' */
+.hc-color{
+    color:#ff6666;
+}
+
+/* '.hc-btn' class selector - style(s) applied to all elements with class '.hc-btn' */
+.hc-btn{
+    font-family: 'Univers LT Std 65 Bold','Helvetica';  
+}
+
+/* '.btn-outline-danger' class and state selectors - override bootsrap styles for buttons*/
+.btn-outline-danger:hover{
+    color: #fff;
+    background-color: #ff6666;
+    border-color: #ff6666;
+}
+.btn-outline-danger:not(:disabled):not(.disabled).active, .btn-outline-danger:not(:disabled):not(.disabled):active, .show>.btn-outline-danger.dropdown-toggle {
+    color: #fff;
+    background-color: #ff6666;
+    border-color: #ff6666;
+}
+.btn-outline-danger {
+    color: #ff6666;
+    border-color: #ff6666;
+}
+
+
+/* <-- NAVBAR --> */
+
+/* '#hc-navbar-nav' id and child class '.nav-link' selector - style(s) that are applied to the element with class '.nav-link' that are children of element with id '#hc-navbar-nav' */
+#hc-navbar-nav .nav-link{
+    font-family: 'Univers LT Std 65 Bold','Helvetica';
+    font-size: 0.875rem;
+    padding-left: 1rem;
+    padding-right: 1rem;  
+}
+
+/* <-- PAGE HEADER --> */
+
+/* '.hc-page-header' class selector - style(s) applied to all elements with class '.hc-page-header' */
+.hc-page-header{
+    position: relative;
+    min-height: 250px;
+    background: url('../img/harajuku-contact-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    border-bottom: 1px #eee solid;
+}
+
+/* '#hc-page-header-contact' class selector - style(s) applied to all elements with id '#hc-page-header-contact' */
+#hc-page-header-contact{
+    background: url('../img/harajuku-contact-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* '.hc-dark-overlay' class selector - style(s) applied to all elements with class '.hc-hc-dark-overlay' */
+.hc-dark-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+
+/* <-- BANNER SLIDER --> */
+
+/* '.carousel-item' class selector - style(s) applied to all elements with class '.carousel-item' */
+.carousel-item{
+    min-height: 450px;
+}
+
+/* '.hc-banner-carousel-image-1' class selector - style(s) applied to all elements with class '.hc-banner-carousel-image-1' */
+.hc-banner-carousel-image-1{
+    background: url('../img/harajuku-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* '.hc-banner-carousel-image-2' class selector - style(s) applied to all elements with class '.hc-banner-carousel-image-2' */
+.hc-banner-carousel-image-2{
+    background: url('../img/harajuku-tickets-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* '.hc-banner-carousel-image-3' class selector - style(s) applied to all elements with class '.hc-banner-carousel-image-3' */
+.hc-banner-carousel-image-3{
+    background: url('../img/harajuku-guests-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* '#hc-banner' id and child 'a'elements selector - style(s) that are applied to all a elements that are children of element with id '#hc-banner' */
+#hc-banner a {
+    font-family: 'Univers LT Std 65 Bold','Helvetica';
+    font-size: 1rem; 
+}
+
+/* <-- CARDS --> */
+
+/* '#hc-cards' id child 'h3'selector - style(s) that are applied to 'h3' elements that are children of element with id 'hc-cards' */
+#hc-cards h3{
+    margin-top: 1rem;
+}
+
+/* 'a' element and '.hdc-card-anchor' and 'hover' state selector - style(s) applied to 'a' elements with class 'hc-card-anchor' and on 'hover' */
+a.hc-card-anchor, a.hc-card-anchor:hover{
+    text-decoration: none;
+}
+
+/* <-- MASCOT --> */
+
+/* '.hc-mascot' class selector - style(s) applied to all elements with class '.hc-mascot' */
+.hc-mascot{
+    content: url('../img/harajuku-mascot.png');
+}
+
+/* '@media' query for screens less that 740px -  'h1' element selector - style(s) applied to all 'h1' elements */
+@media only screen and (max-width:740px)
+{
+    h1
+    {
+        font-size: 30px !important;;
+    }
+
+    h2
+    {
+        font-size: 34px !important;;
+    }
+
+}

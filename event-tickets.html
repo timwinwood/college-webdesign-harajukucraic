@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META TAGS -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINK TAGS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style-tw.css">
+    <link rel="stylesheet" href="css/style-fl.css">
+
+    <!-- TITLE -->
+    <title>Event Tickets - Harajuku Craic</title>
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+
+</head>
+<body> 
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><h1 class="display-4 hc-color">Harajuku Craic</h1></a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#hc-navbar-collapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="hc-navbar-collapse">
+                <ul id="hc-navbar-nav" class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="event-tickets.html" class="nav-link">Event Tickets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="timetable.html" class="nav-link">Timetable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="special-guests.html" class="nav-link">Special Guests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <header id="hc-page-header-tickets" class="hc-page-header p-5">
+        <div class="hc-dark-overlay">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="container pt-5">
+                        <h2 class="display-3">Event Tickets</h2>
+                        <h4 class="d-none d-md-block">Get your ticket!</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE CONTENT START -->
+
+    <!-- Ticket Details -->
+    <div class="container">
+        <div class="card-deck mt-5 mb-5">
+            <div class="card">
+              <div class="card-body text-center">
+                <h4 class="card-title">Standard <br>€25</h4>
+                <p class="card-text">Grants you standard entry to the event</p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-outline-danger" onclick="myPrompt()">Buy Now</button>
+              </div>
+            </div>
+            <div class="card">
+                <div class="card-body text-center">
+                  <h4 class="card-title">Child <br>€15</h4>
+                  <p class="card-text">Valid for children under the age of 13 on the day of the event</p>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-outline-danger" onclick="myPrompt()">Buy Now</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body text-center">
+                  <h4 class="card-title">Family <br>€50</h4>
+                  <p class="card-text">Grants up to two adults and two children entry to the event</p>
+                </div>
+                <div class="card-footer">
+                    <button type="button" class="btn btn-outline-danger" onclick="myPrompt()">Buy Now</button>
+                </div>
+              </div>            
+          </div>
+
+          <!-- Displays only when user click on a ticket type-->
+          <div class="mb-5" id="ticket-order">
+            <div class="mt-5 horizontal_dotted_line"></div>
+
+            <h3 class="mt-5 text-center">Enter Details</h3>          
+        
+            <div class="row mt-5">
+
+                <!-- Ticket Quantity -->
+                <div class="col-md-3 offset-md-2">
+                    <table class="table table-borderless">
+                        <tr>
+                            <th>Ticket Type</th>
+                            <th>Quantity</th>
+                        </tr>
+                        <tr>
+                            <td>Standard</td>
+                            <td>
+                                <!-- Js oninput to make sure that the user does not enter manually a negative value-->
+                                <input type="number" id="standard-qty" class="form-control qty" name="qty" min="0" max="10" oninput="validity.valid||(value='');">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Child</td>
+                            <td>
+                                <input type="number" id="child-qty" class="form-control qty" name="qty" min="0" max="10" oninput="validity.valid||(value='');">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Family</td>
+                            <td>
+                                <input type="number" id="family-qty" class="form-control qty" name="qty" min="0" max="10" oninput="validity.valid||(value='');">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <!-- Value updates if user choose ticket quantity-->
+                            <td id="total-price">€0</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Ticket payment-->
+                <div class="col-md-4 offset-md-1 mt-3">
+                    <form action="#" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <!-- using tel input field instead of number to not have the arrow in the field-->
+                            <input type="tel" class="form-control" placeholder="Credit Card Number" id="cc-number" pattern="[0-9]*" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Name on Card" id="name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="month" class="form-control" id="expiration-date" name="expiration-date" min="2021-04" required>
+                            </div>
+                            <div class="col">
+                                <input type="tel" class="form-control" placeholder="CVC" name="cvc" pattern="[0-9]*" required>
+                            </div>
+                            <div class="col">
+                                <button type="submit" class="btn btn-outline-danger">Pay</button>
+                            </div>
+                        </div>                 
+                    </form>
+                </div>
+            </div>
+          </div>
+    </div>
+
+
+    <!-- PAGE CONTENT END -->
+
+    <!-- PAGE FOOTER -->
+    <footer  class="bg-dark p-1">
+        <p class="text-center text-white"><small>Copyright &copy; <span id="hc-year"></span> · Harajuku Craic ·  Florent, Lana and Tim</small></p>  
+    </footer>
+
+    <!-- SCRIPT TAGS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/ccad46b2a5.js" crossorigin="anonymous"></script>
+    <script src="js/javascript-tw.js"></script>
+    <script src="js/javascript-fl.js"></script>
+
+</body>
+</html>

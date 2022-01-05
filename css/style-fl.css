@@ -1,0 +1,85 @@
+/* <-- PAGE HEADER --> */
+
+/* '#hc-page-header-tickets' class selector - style(s) applied to all elements with id '#hc-page-header-tickets' */
+#hc-page-header-tickets{
+    background: url('../img/harajuku-tickets-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* '#hc-page-header-timetable' class selector - style(s) applied to all elements with id '#hc-page-header-timetable' */
+#hc-page-header-timetable{
+    background: url('../img/headertimetable.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* <-- TICKET DETAILS --> */
+
+.card
+{
+    border-color: #ff6666;
+    border-width: 5px;
+    border-radius: 0.5rem;
+}
+
+
+/* Override the default card footer styling from Bootstrap */
+.card-footer
+{
+    background-color: white;
+    text-align: center;
+    border-top: none;
+}
+
+.horizontal_dotted_line{
+    border-bottom: 8px dotted #ff6666;
+    width: 100%;
+    padding-top: 40px;
+
+}
+
+/* <-- PAYMENT --> */
+
+#ticket-order
+{
+    display: none; /* does not display the ticket ordering before the user chooses a ticket type*/
+    
+}
+
+
+/* <-- TIMETABLE --> */
+
+/* vertical line to separate events */
+.vl {
+    border-right: 4px solid #c6c6c6;
+    height: 50px;
+  }
+
+ .event-grey
+ {
+    border: 4px solid #c6c6c6;
+ }
+
+ .event-green
+ {
+    border: 4px solid #9ace68;
+ }
+
+ .event-red
+ {
+    border: 4px solid #dd6c64;
+ }
+
+ .event-yellow
+ {
+    border: 4px solid #f8e088;
+ }
+
+ .event-blue
+ {
+    border: 4px solid #6db3f3;
+ }
+
+ 

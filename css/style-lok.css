@@ -1,0 +1,38 @@
+#hc-page-header-special-guests-name{
+    background: url('../img/harajuku-guests-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#Guest-image1{
+    padding-right: 50px;
+    float: left;
+    padding-bottom: 20px;
+}
+
+#Guest-image2{
+    padding-right: 50px;
+    float: left;
+    padding-bottom: 20px;
+}
+
+#Guest-image3{
+    padding-right: 50px;
+    float: left;
+    padding-bottom: 20px;
+}
+
+.clear{
+    clear: both;
+    padding-bottom: 60px;
+    
+}
+
+.horizontal_dotted_line{
+    border-bottom: 8px dotted #ff6666;
+    width: 100%;
+    padding-top: 40px;
+
+}
+
+
